@@ -7,13 +7,13 @@ interface FooterLinkProps {
 }
 
 const FooterLinkSection: React.FC<FooterLinkProps> = ({ title, links }) => (
-  <div className="flex flex-col space-y-2">
+  <div className="flex flex-1 flex-col space-y-2">
     <h3 className="font-semibold text-gray-800 mb-2 text-xl">{title}</h3>
     {links.map((link, index) => (
       <a
         key={index}
         href="#"
-        className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-xl"
+        className="text-[#7D7D7D] hover:text-gray-900 transition-colors duration-200 text-lg"
       >
         {link}
       </a>
@@ -32,9 +32,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white border-[1px]">
+    <footer className="bg-white border-[1px] ">
       <div className="w-full mx-auto pt-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 px-5 py-10">
+        <div className="grid xl:flex xl:flex-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 px-5 py-[3%]">
           {/* Footer Link Sections */}
           <FooterLinkSection title="About Styler" links={aboutLinks} />
           <FooterLinkSection title="Categories" links={categoryLinks} />
@@ -42,26 +42,26 @@ const Footer = () => {
           <FooterLinkSection title="Help" links={helpLinks} />
           
           {/* Newsletter Section */}
-          <div className="flex flex-col space-y-4">
-            <h3 className="font-semibold text-gray-800">Newsletter</h3>
+          <div className="flex flex-5 flex-col space-y-4 w-[32vw]">
+            <h3 className="font-semibold text-gray-800 text-xl">Newsletter</h3>
             <div className="flex flex-col space-y-2">
               <input
                 type="email"
                 placeholder="Your E-mail"
-                className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-200"
+                className="p-6 mt-3 border text-center border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-200"
               />
-              <button className="bg-[#252525] text-white py-2 px-4 rounded hover:bg-gray-800 transition-colors duration-200">
+              <button className="bg-[#252525] text-white py-3 mt-2 px-4 rounded hover:bg-gray-800 transition-colors duration-200">
                 Submit
               </button>
             </div>
-            <p className="text-sm text-gray-600">
+            <p className="text-lg text-[#7D7D7D]">
               Sign up to get the latest on new Products, Promotions, Design news and more
             </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 py-8 border-t border-gray-200 bg-[#252525] px-5">
+        <div className="mt-12 py-6 border-t border-gray-200 bg-[#252525] px-5">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Contact Information */}
             <div className="flex items-center space-x-4 text-gray-100">
